@@ -89,10 +89,10 @@ export default function Chat() {
     if (!currentConversationId) {
         return (
             <div className="flex flex-col items-center justify-center h-[calc(100vh-12rem)] gap-4">
-                <Card className="p-8 text-center max-w-md w-full">
-                    <h2 className="text-2xl font-semibold mb-2">Welcome to Chat</h2>
-                    <p className="text-muted-foreground mb-6">Start a new conversation by typing your message below</p>
-                    <form onSubmit={handleEmptyStateSubmit} className="flex gap-2">
+                <div className="p-8 text-center max-w-md md:max-w-3xl w-full border-none">
+                    <h2 className="text-2xl md:text-6xl font-semibold mb-2">What can I help with?</h2>
+                    <p className="text-muted-foreground md:text-2xl mb-6">Start a new conversation by typing your message below</p>
+                    <form onSubmit={handleEmptyStateSubmit} className="flex gap-2 max-w-md mx-auto">
                         <Input
                             value={input}
                             onChange={(e) => setInput(e.target.value)}
@@ -108,7 +108,7 @@ export default function Chat() {
                             <Send className="w-5 h-5" />
                         </Button>
                     </form>
-                </Card>
+                </div>
             </div>
         );
     }
